@@ -68,7 +68,7 @@ func Login (c *gin.Context)  {
 			"token":token,
 		 })
 
-		 return
+		 
 }
 
 
@@ -82,7 +82,7 @@ func Login (c *gin.Context)  {
 	// Create JWT token with claims
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"id": id,
-		"exp":      time.Now().Add(time.Hour * 720).Unix(),
+		"exp": time.Now().Add(time.Hour * 720).Unix(),
 	})
 
 	// Sign and get the complete encoded token as a string
